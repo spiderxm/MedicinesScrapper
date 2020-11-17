@@ -23,7 +23,7 @@ try:
                     name = BeautifulSoup(body, "lxml").get_text()
                     Medicines.append({
                         "id": str(uuid.uuid4()),
-                        "medicine_name": name,
+                        "medicine_name": name.strip(),
                         "category": category
                     })
         json.dump(Medicines, file1)
