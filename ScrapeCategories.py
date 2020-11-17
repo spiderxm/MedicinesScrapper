@@ -3,7 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 import uuid
 
-
 # Scrapping categories from netmeds.com
 try:
     response = requests.get("https://www.netmeds.com/prescriptions")
@@ -16,7 +15,7 @@ try:
             d = BeautifulSoup(body, "lxml")
             medicine_category = d.get_text()
             if medicine_category != None and medicine_category != " ":
-                medicine_category = medicine_category.strip()[:-5]
+                medicine_category = medicine_category.strip()[:-4]
                 if medicine_category.endswith("("):
                     medicine_category = medicine_category[:-1]
                 medicine_categories.append({"id": str(uuid.uuid4()), "category": medicine_category.strip()})
