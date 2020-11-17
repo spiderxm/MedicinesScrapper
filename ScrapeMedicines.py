@@ -17,6 +17,7 @@ try:
                     '-')
                 response = requests.get(url)
                 fetched_data = BeautifulSoup(response.text, "lxml")
+
                 medicines = fetched_data.find_all("li", {"class": "product-item"})
                 for medicine in medicines:
                     body = f"<body> {str(medicine)} </body>"
