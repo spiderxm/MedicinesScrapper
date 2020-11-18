@@ -57,4 +57,4 @@
 ]
 ```
 
-Id for medicine and category are set manually using UUID package provided by netmeds 
+Id for medicine and category are set manually using UUID package provided by python
